@@ -5,21 +5,11 @@ html{
     font-size:  62.5%;
     box-sizing: border-box;
     scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
 }
 
 *, *:before, *:after {
     box-sizing: inherit;
-  }
-
-  :root {
-    --primary-color: #111317;
-    --primary-color-light: #1f2125;
-    --primary-color-extra-light: #35373b;
-    --secondary-color: #f9ac54;
-    --secondary-color-dark: #d79447;
-    --text-light: #d1d5db;
-    --white: #ffffff;
-    --max-width: 1200px;
   }
 
 
@@ -32,7 +22,7 @@ body{
 
 /*Logo*/
 .Logo{
-     background-color: blue;
+     background-color:#014f86;
      margin-bottom: 0.5rem;
      height: 10rem;
      padding: 2rem;
@@ -44,51 +34,61 @@ body{
     object-fit: cover;
 }
 
+.clickeable-img {
+  transition: transform 0.3s ease; /* Efecto de zoom */
+}
+
+.clickeable-img:hover {
+  transform: scale(1.1); /* Aumenta el tamaño al pasar el cursor */
+}
+
+
 /*Navegacion Interface*/
-.main-nav {
+@media(min-width: 768px) {
+  .barra {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between; /* Align logo to the left and navigation to the right */
+    align-items: center; /* Center items vertically */
+  }
 }
 
-/* Media query para pantallas más grandes */
-@media (min-width: 768px) {
-    .main-nav {
-        flex-direction: row;
-        justify-content: space-between;
-    }
+@media(min-width: 768px) {
+  .navegacion {
+    display: flex;
+    gap: 2rem;
+    align-items: center; /* Center items vertically */
+  }
 }
 
-
-.main-nav a{
+.navegacion_enlace{
     display: block;
     text-align: center;
-    padding: 2rem;
-    color: white;
+    font-size: 2.5rem;
+    color: #ffffff;
     text-decoration: none;
-    font-size: 2rem;
-    font-weight: bold;
-  
+    padding: 10px 20px;   
+    font-family: 'Krub', sans-serif;
+    font-weight: 900;
 }
 
-.main-nav a:hover{
-    background-color : red;
-    color:white;
-    
-} 
-.nav-bg{
-    background-color: blue;
+.navegacion_enlace:hover{
+    background-color: #004173;
+    border-radius: 1rem;
 }
+
+
+/************************/
 
 .container{
-    max-width : 120rem;
-    margin: 0 auto  ;
+  max-width : 120rem;
+  margin: 0 auto  ;
 }
 
 
 h1,h2,h3,h4{
 
-    text-align: center;
-    font-family: sans-serif;
+  text-align: center;
+  font-family: sans-serif;
 }
 
 /*Imagen de Poster*/
@@ -97,6 +97,7 @@ h1,h2,h3,h4{
     background-image: url(../img/FIT\ TODAY\,\ stronger\ tomorrow.png);
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center center;
     height: 100rem;
     width: 100%;
     position: relative;
@@ -166,13 +167,24 @@ h1,h2,h3,h4{
 /*tabla de precios*/
 
 
-.Tarifas{
+.Tarifas {
     display: grid;
-    grid-template-columns: 33.3% 33.3% 33.3%;
+    grid-template-columns: 1fr; /* Default to single column */
     column-gap: 2rem;
     margin-top: 15rem;
 }
 
+@media(min-width: 768px) {
+    .Tarifas {
+        grid-template-columns: 1fr 1fr; /* Two columns for medium screens */
+    }
+}
+
+@media(min-width: 1024px) {
+    .Tarifas {
+        grid-template-columns: 1fr 1fr 1fr; /* Three columns for large screens */
+    }
+}
 
 .price_card{
     padding: 3rem 2rem;
@@ -253,14 +265,24 @@ h1,h2,h3,h4{
   /*Instalaciones*/
 
 
-.grid{
+.grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr; /* Default to single column */
     gap: 2rem;
     margin-top: 10rem;
-    
+}
 
-  }
+@media(min-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr 1fr; /* Two columns for medium screens */
+    }
+}
+
+@media(min-width: 1024px) {
+    .grid {
+        grid-template-columns: 1fr 1fr 1fr; /* Three columns for large screens */
+    }
+}
 
   .grid:hover{
     box-shadow: 0 4px 8px rgba(1, 138, 190, 0.5); 
@@ -284,11 +306,6 @@ h1,h2,h3,h4{
    
   }
   
-  
-
-  .instalaciones_info {
-  }
-
   .instalaciones_nombre{
     font-size: 2rem;
     font-family: 'Krub', sans-serif;
@@ -296,4 +313,48 @@ h1,h2,h3,h4{
     text-align: center;
     font-weight: 900;
   }
+
+
+  /*Footer*/
+
+  .footer{
+    background-color: #014f86;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 1rem;
+  }
+
+  .footer_linea hr {
+    border: 0.1rem solid #ffffff;
+    margin :0.01rem;
+  }
+
+  footer img{
+   padding-top: 0.1rem;
+  }
   
+
+  .footer i{
+    color: white;
+    font-size: 5rem;
+  }
+
+  .footer p{
+    font-size: 2rem;
+    font-family: 'Krub', sans-serif;
+    font-weight: 900;
+  }
+
+.footer_redes p{
+  font-size: 2.8rem;
+  font-family: 'Krub', sans-serif;
+  font-weight: 900;
+   
+}
+
+.footer_redes hr{
+  border: 0.1rem solid #ffffff;
+  margin :4rem;
+  
+}
