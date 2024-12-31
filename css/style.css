@@ -94,16 +94,31 @@ h1,h2,h3,h4{
 /*Imagen de Poster*/
   
 .hero{
-    background-image: url(../img/FIT\ TODAY\,\ stronger\ tomorrow.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    height: 100rem;
-    width: 100%;
-    position: relative;
-    margin: 0;
-    padding: 0;
-    
+  background-image: url(../img/FIT\ TODAY\,\ stronger\ tomorrow.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 60vh; /* Use viewport height for flexibility */
+  width: 100%;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  
+}
+
+@media(max-width: 768px) {
+  .hero {
+      height: 40vh; /* Adjust height for smaller screens */
+      background-size: cover; /* Ensure background image fits */
+      margin-top: 5rem; /* Add margin to push hero section down */
+  }
+}
+
+@media(min-width: 768px) and (max-width: 1024px) {
+  .hero {
+      height: 50vh; /* Adjust height for medium screens */
+      background-size: cover; /* Ensure background image fits */
+  }
 }
 
 /*SLOGAN DE IMAGEN*/
@@ -171,7 +186,10 @@ h1,h2,h3,h4{
     display: grid;
     grid-template-columns: 1fr; /* Default to single column */
     column-gap: 2rem;
-    margin-top: 15rem;
+    row-gap: 2rem;
+    margin: 15rem auto; /* Center the section */
+    padding: 0 2rem; /* Add padding to ensure it stays within the container */
+    max-width: 1200px; /* Adjust to fit within the container */
 }
 
 @media(min-width: 768px) {
