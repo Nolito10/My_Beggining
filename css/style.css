@@ -91,7 +91,7 @@ h1,h2,h3,h4{
   font-family: sans-serif;
 }
 
-/*Imagen de Poster*/
+/*Imagen de Poster
   
 .hero{
     background-image: url(../img/FIT\ TODAY\,\ stronger\ tomorrow.png);
@@ -105,6 +105,30 @@ h1,h2,h3,h4{
     padding: 0;
     
 }
+*/
+
+.hero {
+  background-image: url(../img/FIT\ TODAY\,\ stronger\ tomorrow.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 50vh; /* Ajusta la altura para que sea más responsiva */
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+  .hero {
+      height: 30vh;
+      background-size: contain; /* Evita cortes en la imagen */
+  }
+}
+
+
 
 /*SLOGAN DE IMAGEN*/
 
