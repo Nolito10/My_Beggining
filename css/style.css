@@ -91,7 +91,7 @@ h1,h2,h3,h4{
   font-family: sans-serif;
 }
 
-/*Imagen de Poster
+/*Imagen de Poster */
   
 .hero{
     background-image: url(../img/FIT\ TODAY\,\ stronger\ tomorrow.png);
@@ -105,20 +105,22 @@ h1,h2,h3,h4{
     padding: 0;
     
 }
-*/
 
+/*
 .hero {
   background-image: url(../img/FIT\ TODAY\,\ stronger\ tomorrow.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  height: 50vh; /* Ajusta la altura para que sea más responsiva */
+  height: 50vh; 
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
 }
+*/ 
+
 
 /* Ajustes para pantallas pequeñas */
 @media (max-width: 768px) {
@@ -189,14 +191,20 @@ h1,h2,h3,h4{
 }
 
 /*tabla de precios*/
+.Tarifas, .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
 
-
+/*
 .Tarifas {
     display: grid;
-    grid-template-columns: 1fr; /* Default to single column */
+    grid-template-columns: 1fr; 
     column-gap: 2rem;
     margin-top: 15rem;
 }
+*/
 
 @media(min-width: 768px) {
     .Tarifas {
@@ -323,10 +331,8 @@ h1,h2,h3,h4{
 
     width: 100%;
     image-rendering: auto; /* Predeterminado para la mayoría de las imágenes */
-  object-fit: cover;    /* Ajusta la imagen al contenedor */
-  object-position: center; /* Centra la imagen si sobra espacio */
-   
-    
+    object-fit: cover;    /* Ajusta la imagen al contenedor */
+    object-position: center; /* Centra la imagen si sobra espacio */
    
   }
   
@@ -382,3 +388,131 @@ h1,h2,h3,h4{
   margin :4rem;
   
 }
+
+/*****RESPONSIVE******/
+/* Media queries para PC, Tablet y Teléfono */
+@media (max-width: 1024px) {
+  .contenedor {
+      padding: 4rem;
+      margin: 2rem;
+  }
+  .hero {
+      height: 50vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+      height: 30vh;
+  }
+  .contenido-hero h2 {
+      font-size: 4rem;
+  }
+  .contenido-hero p {
+      font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contenedor {
+      padding: 2rem;
+      margin: 1rem;
+  }
+  .hero {
+      height: 20vh;
+  }
+  .contenido-hero h2 {
+      font-size: 3rem;
+  }
+  .contenido-hero p {
+      font-size: 1.6rem;
+  }
+  .navegacion_enlace {
+      font-size: 2rem;
+      padding: 8px 16px;
+  }
+  .price_card h3, .price_card h4 {
+      font-size: 2.5rem;
+  }
+  .footer p, .footer_redes p {
+      font-size: 1.6rem;
+  }
+}
+
+
+/***hamburguesa****/
+/* Estilo del botón hamburguesa */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.hamburguesa {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: #333;
+  position: relative;
+}
+
+.hamburguesa::before,
+.hamburguesa::after {
+  content: '';
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: #333;
+  position: absolute;
+  transition: all 0.3s;
+}
+
+.hamburguesa::before {
+  top: -8px;
+}
+
+.hamburguesa::after {
+  bottom: -8px;
+}
+
+/* Ocultar navegación en móviles */
+@media (max-width: 768px) {
+  .navegacion {
+    display: none;
+    flex-direction: column;
+    background-color: #fff;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    width: 200px;
+    padding: 20px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .navegacion.show {
+    display: flex;
+  }
+}
+
+
+/* Animación al convertir el icono en "X" */
+.menu-toggle.open .hamburguesa {
+  background: transparent;
+}
+
+.menu-toggle.open .hamburguesa::before {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+.menu-toggle.open .hamburguesa::after {
+  transform: rotate(-45deg);
+  bottom: 0;
+}
+
+

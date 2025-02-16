@@ -24,6 +24,19 @@
     };
   </script>
 
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const toggle = document.querySelector('.menu-toggle');
+      const nav = document.querySelector('.navegacion');
+
+      toggle.addEventListener('click', function () {
+        nav.classList.toggle('show');
+        toggle.classList.toggle('open');
+      });
+    });
+
+  </script>
+
 
   <title>Factor Fit</title>
 </head>
@@ -34,6 +47,9 @@
       <a href="index.html">
         <img src="img/Logo.png" alt="Logo" class="clickeable-img">
       </a>
+      <button class="menu-toggle" aria-label="Menú">
+        <span class="hamburguesa"></span>
+      </button>
       <nav class="navegacion">
         <a href="index.html" class="navegacion_enlace">Inicio</a>
         <a href="#Tarifas" class="navegacion_enlace">Planes</a>
@@ -66,7 +82,9 @@
         </h3>
         <p class="p1">
           <i class="ri-checkbox-circle-line"></i>
-          Solo pesas o zumba.
+          Solo <br>
+          pesas <br>
+          o zumba.
         </p>
       </div>
       </section>
