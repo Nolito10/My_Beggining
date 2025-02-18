@@ -558,3 +558,9 @@ h1,h2,h3,h4{
   margin: 0;
   background-color:#014f86;
 }
+
+
+.container {
+  margin: 0 auto; /* Centrar horizontalmente */
+  max-width: 80%; /* Ajusta el ancho si es necesario */
+}
